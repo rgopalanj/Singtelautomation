@@ -1,0 +1,8 @@
+pages\Deletingtask.class
+pages\BasePage.class
+pages\Cleartask.class
+cukes\DemoRunner.class
+pages\Todopage.class
+hooks\Hooks.class
+pages\DemoPageContainer.class
+step_definitions\MyStepdefs.class
