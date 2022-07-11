@@ -1,3 +1,7 @@
+Project 
+
+
+
 Please install the below software to run the frame work.
 -	Install JAVA VERSION 1.8
 -	Install manven 3.6.1
@@ -16,7 +20,7 @@ Execution instauration:
 
  
 
--	Once the above is done ,Pls run the below comments to run  in terminal  the projects
+-	Once the above is done ,Please  run the below comments to run  in terminal  the projects
 
 mvn clean verify -Dexecution_type=browser -Drunner=DemoRunner.
 
