@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.testng.Assert;
 
 public class Todopage extends BasePage {
 
@@ -13,9 +14,16 @@ public class Todopage extends BasePage {
     }
 
     String strtaskdetails;
+    String a;
 
     @FindBy(how = How.XPATH, using="//input[@class=\"new-todo\"]")
     protected WebElement txtTodovalue;
+
+
+
+    @FindBy(how = How.XPATH, using="//li[@class='todo']//label[1]")
+    protected WebElement txtTodovalue2;
+
 
     @FindBy(how =How.XPATH,using = "//a[normalize-space(.)='Completed']")
     protected WebElement clicklink;
@@ -39,22 +47,24 @@ public class Todopage extends BasePage {
         waitForElement(txtTodovalue);
         WebElement ky = enterValue (txtTodovalue,strtaskdetails);
         ky.sendKeys(Keys.ENTER);
+        a=txtTodovalue2.getText();
+        System.out.println("Raj"+" "+strtaskdetails);
+
+        System.out.println("Raj" +" "+ a);
+        Assert.assertEquals(strtaskdetails,a);
+        System.out.println(strtaskdetails +" "+ a);
 
         return(strtaskdetails);
     }
     public void validatelinks()
     {
        waitForSeconds(10);
-
        jsClick(Allclicklink);
-
-        System.out.println("test");
 
     }
     public void clicklinks()
     {
         waitForSeconds(10);
-
         jsClick(verifytask);
         waitForSeconds(5);
         jsClick(clicklink);

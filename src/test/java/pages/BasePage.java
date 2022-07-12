@@ -9,6 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //public class BasePage {
 //}
 public class BasePage {
@@ -98,5 +101,16 @@ public class BasePage {
         return driver.switchTo().alert().getText();
 
     }
+
+    public static boolean compareList(List<WebElement> lstElements, List<String> lstDataValues) {
+        List<String> lstActualValue = new ArrayList<String>();
+        List<String> lstExpectedValues = new ArrayList<String>();
+        lstElements.stream().forEach(eleItem -> lstActualValue.add(eleItem.getText().trim()));
+        lstDataValues.stream().forEach(strData -> lstExpectedValues.add(strData));
+        return (lstActualValue.equals(lstExpectedValues));
+    }
+
+
+
 
 }
